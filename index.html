@@ -52,12 +52,14 @@
         const letterContainer = document.querySelector('#design');
         document.querySelector('#design').addEventListener('mouseover', function() {
             letters.forEach((letter, index) => {
-                setTimeout(() => {
+                setTimeout(function(){
                     letter.style.transform = 'scaleY(2)';
                 }, index * 100);
                 setTimeout(() => {
                     letter.style.transform = 'scaleY(1)';
                 }, (index * 100) + 500);
+
+                /* 화살표나 function이나 같음 */
             });
         });
     </script>
