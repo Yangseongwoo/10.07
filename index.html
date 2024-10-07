@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body{
+            width: 100%;
+            height: 100%;
+            background-color: antiquewhite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section{
+            background-color: antiquewhite;
+            font-size: 100px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .letter { 
+            display: inline-block;
+            font-weight: 600;
+            transition: 0.5s;
+            transform-origin: center bottom;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <section id="design">
+        <span class="letter">D</span>
+        <span class="letter">e</span>
+        <span class="letter">s</span>
+        <span class="letter">i</span>
+        <span class="letter">g</span>
+        <span class="letter">n</span>
+    </section>
+
+    <script>
+        const letters = document.querySelectorAll('.letter');
+        document.querySelector('#design').addEventListener('mouseover', function() {
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.style.transform = 'scaleY(2)';
+                }, index * 100);
+                setTimeout(() => {
+                    letter.style.transform = 'scaleY(1)';
+                }, (index * 100) + 500);
+            });
+        });
+    </script>
+    
+</body>
+</html>
